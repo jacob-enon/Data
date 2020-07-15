@@ -1,5 +1,6 @@
 ﻿using BigJacob.Data;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -25,6 +26,12 @@ namespace DataTests
             };
             serialiser = new JsonSerialiser();
             expected = "[\"a\",\"b\",\"c\"]";
+        }
+
+        [TestCleanup]
+        public void Final()
+        {
+            File.Delete(path);
         }
 
         [TestMethod]

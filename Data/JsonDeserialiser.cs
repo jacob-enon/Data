@@ -17,6 +17,12 @@ namespace BigJacob.Data
         /// <returns> Deserialised object </returns>
         public T DeserialiseFile<T>(string path) => JsonConvert.DeserializeObject<T>(File.ReadAllText(path));
 
+        /// <summary>
+        /// Asynchronously deserialise a JSON file
+        /// </summary>
+        /// <typeparam name="T"> Type of object to deserialise into </typeparam>
+        /// <param name="path"> Path of file to deserialise </param>
+        /// <returns> Task of deserialised object </returns>
         public async Task<T> DeserialiseFileAsync<T>(string path)
         {
             string item;
